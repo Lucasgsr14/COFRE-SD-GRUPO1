@@ -7,7 +7,7 @@ video para estudo: https://www.youtube.com/watch?v=4YYA0AZy6NI&ab_channel=Ricard
 
 ## INTEGRANTE / FUNÇÃO
 
-- [ ] Lucas Guaberto / Líder  <a href="https://autenticacao.ufrn.br/sso-server/login?service=https%3A%2F%2Fsigaa.ufrn.br%2Fsigaa%2Flogin%2Fcas" target="_blank">Entregar relatório do Líder até Segunda(01/03)</a>
+- [ ] Lucas Guaberto / Líder  [Relatório do Líder até Segunda(01/03)](https://autenticacao.ufrn.br/sso-server/login?service=https%3A%2F%2Fsigaa.ufrn.br%2Fsigaa%2Flogin%2FcasEntregar)
 - [ ] Lucas da Silva / xxxxx
 - [ ] Paulo Eduardo / xxxxx
 - [ ] Samara Revoredo / xxxxx
