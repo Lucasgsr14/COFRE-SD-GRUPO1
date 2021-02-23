@@ -8,19 +8,22 @@ video para estudo: https://www.youtube.com/watch?v=4YYA0AZy6NI&ab_channel=Ricard
 ## INTEGRANTE / FUNÇÃO
 
 - [ ] Lucas Guaberto / Líder  [Relatório do Líder até Segunda(01/03)](https://autenticacao.ufrn.br/sso-server/login?service=https%3A%2F%2Fsigaa.ufrn.br%2Fsigaa%2Flogin%2FcasEntregar)
-- [ ] Lucas da Silva / xxxxx
-- [ ] Paulo Eduardo / xxxxx
-- [ ] Samara Revoredo / xxxxx
+- [ ] Lucas da Silva / Video Maker
+- [ ] Paulo Eduardo / Redator
+- [ ] Samara Revoredo / Debatedora
 
 ---
 
 ## ATA REUNIÃO DIA 23/02
 
-*
+* Definição das Funções
+* Definição de Horários 234671N1(possibilidade de 2) e 5T5(possibilidade de 6)
 
 ### TAREFAS PARA A PRÓXIMA REUNIÃO
 
----
+* Estudar, das fontes de pesquisa encontradas, para se preparar para o brainstorm
+
+--- 
 
 ## ATA REUNIÃO DIA XX/XX
 
