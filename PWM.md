@@ -1,4 +1,4 @@
-# COMO FUNCIONA O PWM NO 
+# COMO FUNCIONA O PWM NO ATMEGA328P
 
 ## O que tem que ser manipulado para escrita de pinos analógicos
 
@@ -40,27 +40,34 @@ e também setar os bits COM0A01:00 de acordo com a tabela abaixo
 
 ![image](https://user-images.githubusercontent.com/32770973/109574326-7897d480-7ace-11eb-98a3-c5269e796fee.png)
 
+---
+
+### Registrador OCR0A
+
+![image](https://user-images.githubusercontent.com/32770973/109575011-b3e6d300-7acf-11eb-8fe2-a153b36bd404.png)
+
+Neste registrador guardamos um número para comparação, no caso vai ser em cima desse número de 8 bits que o gerador PWM vai modular a onda para valores de tensão
+variando e 19,61 mV para cada unidade de 0 até 255.
+
+---
+
+### Registrador DDRC 
+
+![image](https://user-images.githubusercontent.com/32770973/109575539-c7df0480-7ad0-11eb-85f4-3cce4ef27cf8.png)
+
+Por fim esse registrador é o último que abordaremos que serve para setar a porta D6 que está associada a saida desse modo PWM. Basta escrever 1 lógico no bit DDD6, onde mostra a tabela abaixo:
+
+![image](https://user-images.githubusercontent.com/32770973/109575781-420f8900-7ad1-11eb-9e11-82cb3148ac54.png)
 
 
-
-
-
-
-
-
-### Exemplo de código em alto nível de conversão de um canal AD
+### Exemplo de código em C
 
 ```c
-funcao principal(canal){   //número de 4 bits
-  REGS recebe "01";        //para referencia de AVcc com um capacitor externo em AREF
-  ADLAR recebe '1';        //para mover os dados pós conversao a esqueda
-  ADPS recebe "111";       //para selecionar o divisor de clock por 128
-  MUX recebe canal;        //seleção de canal de entrada de dados
-  ADEN recebe '1';         //enable do ADC setado
-  ADSC recebe '1';         //iniciar a conversão
-  enquanto (ADIF igual 0); //espera o bit de flag ser acionado
-  ADIF recebe 0;           //reseta a flag
-  ADEN recebe '0';         //enable do ADC resetado
+void geraPWM(int num){
+	TCCR0B |= (1 << CS00) | (1 << CS01); //prescale de divisão por 64
+	TCCR0A |= (1 << WGM01) | (1 << WGM00) | (1 << COM0A1); //modo fast pwm, não invertido
+	DDRC |= (1 << DDD6); //setando a porta D6 como saída
+	OCR0A = num; //armazena o número de comparaçãoD
 }
 ```
 
@@ -68,5 +75,5 @@ Programa para fazer uma conversão AD.
 
 ## REFERÊNCIAS
 
-Electrosaurio. **ADC SIN ARDUINO ATMEGA328P - CONVERSOR ANALÓGICO A DIGITAL**. Youtube, 27 mar. de 2019. Disponível em <https://www.youtube.com/watch?v=SwjVAwsi8Os&ab_channel=Electrosaurio>. Acesso em: 26 de fevereiro de 2021.
+MAITI, Sayantan. **RGB LED with Atmega328 AVR using PWM | Datasheet, C Code | Explained in details**. Youtube, 11 out. de 2020. Disponível em <https://www.youtube.com/watch?v=IUW0OTU7BHM&ab_channel=SayantanMaiti>. Acesso em: 01 de fevereiro de 2021.
 Atmel. **8-bit AVR Microcontroller with 32K Bytes In-System Programmable Flash - DATASHEET.**. Disponível em <https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf>. Acesso em: 23 de fevereiro de 2021.
